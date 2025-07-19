@@ -1,0 +1,31 @@
+@function px-to-rem($px-value, $base-font-size: 16px) {
+  @return #{calc($px-value / $base-font-size)}rem;
+}
+
+@mixin font($family, $weight: 400, $size: 16px, $lineheight: 100%, $lettersp: 0) {
+  font-family: $family, sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineheight;
+  letter-spacing: $lettersp;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid-parent($rows: 1fr, $columns: 1fr, $gap: 0 ){
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+@mixin grid-child($grid-row, $grid-column){
+  grid-row: $grid-row;
+  grid-column: $grid-column;
+}

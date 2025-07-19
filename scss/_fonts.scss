@@ -1,0 +1,46 @@
+@use "mixins" as m;
+
+
+@font-face {
+  font-family: "Space Grotesk Bold";
+  src: url("../assets/fonts/static/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk Medium";
+  src: url("../assets/fonts/static/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+$base-font-size: 16px;
+$font-size: m.px-to-rem($base-font-size);
+
+$font-primary: "Space Grotesk Bold", sans-serif;
+$font-secondary: "Space Grotesk Medium", sans-serif;
+
+// Typography mixins would be applied in CSS classes, not as variables
+// Instead, create simple variables for consistent sizing
+
+// Font sizes
+$heading-XL-size: m.px-to-rem(88px);
+$heading-L-size: m.px-to-rem(48px);
+$heading-M-size: m.px-to-rem(24px);
+$body-L-size: m.px-to-rem(18px);
+
+// Line heights
+$heading-XL-lh: m.px-to-rem(88px);
+$heading-L-lh: m.px-to-rem(56px);
+$heading-M-lh: m.px-to-rem(32px);
+$body-L-lh: m.px-to-rem(28px);
+
+// Letter spacing
+$heading-XL-ls: -#{m.px-to-rem(2.5px)};
+$heading-L-ls: -#{m.px-to-rem(1.5px)};
+$heading-M-ls: 0;
+$body-L-ls: 0;
+

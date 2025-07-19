@@ -1,0 +1,843 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "fonts" as f;
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    padding: 0  m.px-to-rem(80px);
+     background-color: v.$primary-bg-color;
+}
+
+main{
+   padding: m.px-to-rem(20px);
+   background-color: v.$primary-bg-color;
+    color: v.$primary-color;
+}
+
+.header{
+    margin:m.px-to-rem(10px) 0;
+    padding: m.px-to-rem(20px) m.px-to-rem(16px) m.px-to-rem(20px) 0; 
+    @include m.flex(row, space-between, center, );
+    background-color:transparent;
+    color: v.$primary-color;
+    
+
+    &__name{
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(32px);
+       line-height: m.px-to-rem(32px);
+       letter-spacing: m.px-to-rem(-0.44px);  
+    }
+
+    &__social-icons{
+      @include m.flex(row, center, center, m.px-to-rem(12px));
+      z-index: 4;
+    }
+}
+
+
+
+.about{
+  width: 100%;
+  height: auto;
+    margin: m.px-to-rem(50px) 0 ;
+    background-color: transparent;
+    color: v.$primary-color;
+    @include m.flex(row, flex-start, center,);
+
+    &__left{
+      @include m.flex(column, space-evenly, flex-start, m.px-to-rem(40px))
+    }
+
+    &__images {
+      @include m.flex(column, center, flex-end, m.px-to-rem(5px));
+      margin-right: m.px-to-rem(40px);
+     
+      img{ 
+        width:30%;
+        height:auto;
+        position: absolute;
+        top:0;
+        right:m.px-to-rem(100px);
+        z-index:0;
+        
+      }
+
+      
+    }
+
+    &__rings{
+        position: absolute;
+        left: - m.px-to-rem(180px);
+        top:m.px-to-rem(100px);
+      }
+
+    &__circle{
+        position: absolute;
+        right: 33%;
+        top:m.px-to-rem(460px);
+        
+      }
+
+    &__greeting{
+      margin-top: m.px-to-rem(50px);
+       padding: m.px-to-rem(4px);
+       background-color: transparent;
+       z-index:1;
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(88px);
+       line-height: m.px-to-rem(88px);
+       letter-spacing: m.px-to-rem(-2.5px);
+    }
+
+    &__name{
+        background-color: transparent;
+        z-index:1;
+        padding-bottom: m.px-to-rem(4px);
+        border-bottom: 3px solid v.$secondary-color;
+        background-color: transparent;
+       } 
+    
+    &__greeting-text{
+       background-color: transparent;
+       z-index:1;
+       font-family: v.$font-secondary, sans-serif;
+       font-weight: 500;
+       font-size: m.px-to-rem(18px);
+       line-height: m.px-to-rem(28px);
+       letter-spacing: m.px-to-rem(0px);
+    }
+
+    &__contact-btn{
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(16px);
+       line-height: m.px-to-rem(26px);
+       letter-spacing: m.px-to-rem(2.29px);
+       background-color: v.$primary-bg-color;
+       color: v.$primary-color;
+       border: none;
+       text-transform: uppercase;
+       padding: m.px-to-rem(4px);
+       border-bottom: 2px solid v.$secondary-color;
+       margin-bottom: m.px-to-rem(200px);
+  }
+
+  &__contact-btn:hover{
+    cursor: pointer;
+    color: v.$secondary-color;
+  }
+  
+}
+
+.skills{
+  padding-top: m.px-to-rem(48px);
+ @include m.flex(row, space-evenly, center, 5%);
+ flex-wrap: wrap;
+
+  &__skill-wrapper{
+    width: 28%;
+    @include m.flex(column, space-evenly, space-evenly, m.px-to-rem(4px));
+    padding: m.px-to-rem(20px) 0 m.px-to-rem(4px);
+  }
+
+  &__skill{
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(48px);
+       line-height: m.px-to-rem(56px);
+       letter-spacing: m.px-to-rem(-1.5px);
+       min-width: m.px-to-rem(220px);
+  }
+
+  &__experiences{
+      font-family: v.$font-secondary, sans-serif;
+       font-weight: 500;
+       font-size: m.px-to-rem(18px);
+       line-height: m.px-to-rem(28px);
+       letter-spacing: m.px-to-rem(0px);
+  }
+  &__rings-wrapper{
+    position: relative;
+    bottom: m.px-to-rem(80px);
+    left: 165%;
+  }   
+}
+
+.projects{
+  padding: m.px-to-rem(100px) 0;
+  
+
+  &__header{
+    @include m.flex(row, space-between, center, );
+   
+  }
+  
+  &__title{
+    font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(88px);
+       line-height: m.px-to-rem(88px);
+       letter-spacing: m.px-to-rem(-2.5px);
+  }
+
+  &__contact-btn{
+    font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(16px);
+       line-height: m.px-to-rem(26px);
+       letter-spacing: m.px-to-rem(2.29px);
+       background-color: v.$primary-bg-color;
+       color: v.$primary-color;
+       border: none;
+       text-transform: uppercase;
+       padding: m.px-to-rem(4px);
+       border-bottom: 2px solid v.$secondary-color
+  }
+
+  &__contact-btn:hover{
+    cursor: pointer;
+    color: v.$secondary-color;
+  }
+
+  &__project-container{
+    @include m.grid-parent(repeat(3, 1fr), repeat(2, 1fr), m.px-to-rem(50px));
+    padding: m.px-to-rem(50px) 0;
+  }
+
+  &__project-wrapper{
+    @include m.grid-child(auto, auto);
+    @include m.flex(column, center, flex-start, m.px-to-rem(4px));
+    position: relative;
+    cursor: pointer;
+}
+  &__project-image{
+    width: 100%;
+    
+    max-width: m.px-to-rem(500px);
+    height: auto;
+    display: block;
+  }
+
+  &__project-name{
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(24px);
+       line-height: m.px-to-rem(32px);
+       letter-spacing: m.px-to-rem(0px);
+       text-transform: uppercase;
+       text-align: left;
+       padding-top: m.px-to-rem(8px) ;
+     
+  }
+
+  &__project-skills{
+       font-family: v.$font-secondary, sans-serif;
+       font-weight: 500;
+       font-size: m.px-to-rem(18px);
+       line-height: m.px-to-rem(28px);
+       letter-spacing: m.px-to-rem(0px);
+       text-transform: uppercase;
+       text-align: left;
+  }
+  
+  &__hover-panel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.75);
+    color: v.$primary-color;
+    @include m.flex(column, center, center, m.px-to-rem(20px));
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  &__project-wrapper:hover &__hover-panel{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+  .hover-panel__project-link a,
+  .hover-panel__project-code a{
+    color: v.$primary-color;
+    font-weight: 700;
+    text-decoration: underline;
+   
+    font-size: m.px-to-rem(28px);
+    line-height: m.px-to-rem(28px);
+    letter-spacing: m.px-to-rem(0px);
+    text-transform: uppercase;
+    text-align: left;
+    cursor: pointer;
+    
+    &:hover{
+      color: v.$secondary-color;
+    }
+  }
+
+  }
+
+  .contact{
+    @include m.flex(row, flex-start, center, m.px-to-rem(40px));
+    background-color: v.$secondary-bg-color;
+    color: v.$primary-color;
+    padding: m.px-to-rem(40px);
+
+    &__texts{
+      @include m.flex(column, space-evenly, flex-start, m.px-to-rem(60px));
+   
+      h2{
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(48px);
+       line-height: m.px-to-rem(48px);
+       letter-spacing: m.px-to-rem(-2.5px);  
+    }
+     p{
+       font-family: v.$font-secondary, sans-serif;
+       font-weight: 500;
+       font-size: m.px-to-rem(18px);
+       line-height: m.px-to-rem(28px);
+       letter-spacing: m.px-to-rem(0px);  
+     }
+      
+    }
+
+    &__form{
+      @include m.flex(column, space-evenly, flex-start, m.px-to-rem(14px));
+      
+      width: 100%;
+
+      input, textarea{
+        
+        background-color: v.$secondary-bg-color;
+        padding: 1px 5px 7px;
+        color: white;
+        border: none;
+        border-bottom: 1px solid white;
+
+        font-family: v.$font-secondary, sans-serif;
+       font-weight: 500;
+       font-size: m.px-to-rem(16px);
+       line-height: m.px-to-rem(26px);
+       letter-spacing: - m.px-to-rem(0.22px); 
+       text-transform: uppercase; 
+      
+      };
+      input{
+        width: 100%;
+      }
+      textarea{
+        width:100%;
+        height: 100px;
+      }
+
+   
+    }
+     
+    &__input-wrapper{
+      position: relative;
+      width: 100%;
+    }
+
+    &__error-message{
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding-top: m.px-to-rem(4px);
+      color: crimson;
+      font-size: m.px-to-rem(12px);
+      text-align: right;
+      display: none; // Initially hidden
+    }
+     
+     &__submit-btn{
+        background-color: v.$secondary-bg-color;
+        color: white;
+        padding-bottom: m.px-to-rem(4px);
+        border:none;
+        border-bottom: 1px solid v.$secondary-color;
+        padding: m.px-to-rem(4px);
+        position: relative;
+        align-self: flex-end;
+      }
+
+      &__submit-btn:hover{
+         cursor: pointer;
+         color: v.$secondary-color;
+  }
+  }
+
+  hr{
+    width:100%;
+    height: m.px-to-rem(2px);
+    margin: 3rem 0;
+  }
+
+  .footer{
+    margin:m.px-to-rem(40px) m.px-to-rem(20px);
+    padding: m.px-to-rem(20px) 0; 
+    @include m.flex(row, space-between, center, );
+    background-color: v.$primary-bg-color;
+    color: v.$primary-color;
+    
+
+    &__name{
+       font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(32px);
+       line-height: m.px-to-rem(32px);
+       letter-spacing: m.px-to-rem(-0.44px);  
+    }
+
+    &__social-icons{
+      @include m.flex(row, center, center, m.px-to-rem(12px));
+    }
+}
+
+@media (max-width: 50rem) {
+  .header {
+    text-align: center;
+    padding: 1rem;
+
+    &__name {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &__social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+
+    &__left {
+      margin-bottom: 2rem;
+    }
+
+    &__greeting{
+      width: 76%;
+
+      font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(72px);
+       line-height: m.px-to-rem(72px);
+       letter-spacing: m.px-to-rem(-2.044px);  
+
+       text-align: left;
+
+    }
+
+
+    &__name {
+      display: inline-block;
+    }
+
+    &__greeting-text {
+      margin: 1rem 0;
+    }
+
+    &__contact-btn {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+     &__images{ 
+        img{
+      src: url('../assets/images/image-profile-tablet.webp');
+     }
+
+    &__images {
+      img {
+        width: 80%;
+        height: auto;
+        background-color: #ccc;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+      }
+
+       &__rings{
+      position: relative;
+      top: -60px;
+      left:80px;
+    }
+
+      &__circle{
+      position: absolute;
+      top: 50px;
+      right: -50%;
+      transform: translateX(50%);
+    }
+    }
+  }
+  }
+  .divider {
+    margin: 2rem 0;
+  }
+
+  .skills {
+    @include m.flex(row, space-between, center, 0) ;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    height: auto;
+
+    &__skill-wrapper {
+      @include m.flex(column, center, flex-start,);
+      width: 45%; // Két oszlopban elhelyezés
+      min-width: m.px-to-rem(200px);
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    &__rings-wrapper {
+      position: absolute;
+      bottom: m.px-to-rem(-40px);
+      right: -50%;
+      transform: translateX(50%);
+      z-index: 0;
+    }
+  }
+
+  .projects {
+    padding: 2rem 1rem;
+
+    &__header {
+      @include m.flex(row, space-between, center, 1rem);
+    
+    }
+
+    &__project-container {
+      @include m.flex(row, space-between, center, 2rem);
+      margin-top: 2rem;
+      
+      flex-wrap: wrap;
+    }
+
+    &__project-wrapper {
+      @include m.flex(column, center, flex-start, 1rem);
+      width: 45%;
+    }
+
+    &__project-image{
+    width: 100%;
+    height: m.px-to-rem(180px);
+    
+  }
+
+  &__project-image:nth-of-type(1){
+    src: url('../assets/images/thumbnail-project-1-small.webp')
+  }
+
+  &__project-image:nth-of-type(2){
+    src: url('../assets/images/thumbnail-project-2-small.webp')
+  }
+
+  &__project-image:nth-of-type(3){
+    src: url('../assets/images/thumbnail-project-3-small.webp')
+  }
+
+  &__project-image:nth-of-type(4){
+    src: url('../assets/images/thumbnail-project-4-small.webp')
+  }
+
+  &__project-image:nth-of-type(5){
+    src: url('../assets/images/thumbnail-project-5-small.webp')
+  }
+
+  &__project-image:nth-of-type(6){
+    src: url('../assets/images/thumbnail-project-6-small.webp')
+  }
+
+    &__project-name {
+      margin-top: 1rem;
+      height: 2rem;
+    }
+
+    &__project-skills {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    
+    &__hover-panel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.75);
+    color: v.$primary-color;
+    @include m.flex(column, center, center, m.px-to-rem(20px));
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  &__project-wrapper:hover &__hover-panel{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+  .hover-panel__project-link a,
+  .hover-panel__project-code a{
+    color: v.$primary-color;
+    font-weight: 700;
+    text-decoration: underline;
+   
+    font-size: m.px-to-rem(28px);
+    line-height: m.px-to-rem(28px);
+    letter-spacing: m.px-to-rem(0px);
+    text-transform: uppercase;
+    text-align: left;
+    cursor: pointer;
+    
+    &:hover{
+      color: v.$secondary-color;
+    }
+  }
+
+
+    &__contact-btn {
+      margin-top: 1rem;
+    }
+  }
+
+  .contact {
+    padding: 2rem 1rem;
+    text-align: center;
+    @include m.flex(column, center, center, 1rem);
+
+    &__form {
+      margin-top: 2rem;
+    }
+
+    &__input-wrapper {
+      margin-bottom: 1rem;
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+
+      .contact__error-message {
+        font-size: 0.75rem;
+        color: red;
+        text-align: left;
+      }
+    }
+
+    &__submit-btn {
+      width: 100%;
+      padding: 0.75rem;
+      font-weight: bold;
+      background-color: #fff;
+      border: 2px solid #fff;
+      color: #000;
+    }
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+    text-align: center;
+
+    &__name {
+      font-size: 1.25rem;
+    }
+
+    &__social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (width < 38rem ) {
+  
+  body{
+    margin: 0 auto;
+    padding: 0 0.5rem;
+  }
+
+  .header,
+  .footer{
+    padding: 0rem;
+    @include m.flex(column, center, center, 0.5rem);
+  }
+
+  .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.25rem;
+
+   
+    &__left{
+      order: 5;
+      padding-top: 5rem;
+      margin: 5rem auto;
+    }
+ 
+      &__greeting{
+      
+      width: 100%;
+      height: auto;
+      
+      font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(40px);
+       line-height: m.px-to-rem(40px);
+       letter-spacing: m.px-to-rem(-1.14px);
+
+    }
+  
+
+    &__images{ 
+        img{
+      src: url('../assets/images/image-profile-mobile.webp');
+     
+      order: 1; 
+      position: absolute;
+      top: 8rem;
+      left: 36%;
+    }
+  
+  
+  }
+  }
+   
+  .skills {
+    @include m.flex(column, center, center, m.px-to-rem(8px));
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+
+    &__skill-wrapper {
+      @include m.flex(column, center, center,);
+      margin:0.5rem auto 1.5rem;
+      padding:0;
+      text-align: center;
+    }
+
+    &__skill{
+      text-align: center;
+      font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(48px);
+       line-height: m.px-to-rem(56px);
+       letter-spacing: m.px-to-rem(-2.044px)
+    }
+
+    &__experiences{
+      text-align: center;
+    }
+
+    &__rings-wrapper {
+      position: absolute;
+      bottom: m.px-to-rem(-40px);
+      left: 50%;
+      transform: translateX(125px);
+      z-index: 0;
+    }
+  }
+  .projects {
+    
+    &__header{
+      width: 100%;
+    }
+
+    &__title{
+      font-family: v.$font-primary, sans-serif;
+       font-weight: 700;
+       font-size: m.px-to-rem(40px);
+       line-height: m.px-to-rem(40px);
+       letter-spacing: m.px-to-rem(-1.14px);
+    }
+
+    &__project-container {
+      @include m.flex(column, center, center, m.px-to-rem(24px));
+      margin: m.px-to-rem(24px) auto;
+      width: 100%;
+    }
+
+    &__project-wrapper{
+      position: relative;
+      width: 100%;
+      max-width: m.px-to-rem(345px);
+      cursor: pointer;
+    }
+
+    &__project-image{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &__hover-panel{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(20, 20, 20, 0.75);
+      color: v.$primary-color;
+      @include m.flex(column, center, center, m.px-to-rem(20px));
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    &__project-wrapper:hover &__hover-panel{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hover-panel__project-link a,
+    .hover-panel__project-code a{
+      color: v.$primary-color;
+      font-weight: 700;
+      text-decoration: underline;
+      font-size: m.px-to-rem(16px);
+      line-height: m.px-to-rem(20px);
+      letter-spacing: m.px-to-rem(0px);
+      text-transform: uppercase;
+      text-align: center;
+      cursor: pointer;
+      
+      &:hover{
+        color: v.$secondary-color;
+      }
+    }
+  }
+}
